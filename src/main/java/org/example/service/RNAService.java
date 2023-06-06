@@ -62,8 +62,11 @@ public class RNAService {
     }
 
     public void learn() throws Exception {
-        Backpropagation backpropagation = new Backpropagation(50,5);
-        backpropagation.SetLearningRate(0.7);
+        int[] layers = new int[1];
+        layers[0] = 50;
+        Backpropagation backpropagation = new Backpropagation(50,5, layers);
+
+        backpropagation.SetLearningRate(0.3);
         backpropagation.SetErrorRate(0.010);
         backpropagation.SetMaxIterationNumber(500000);
 
