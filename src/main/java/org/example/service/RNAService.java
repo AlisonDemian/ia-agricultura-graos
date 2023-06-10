@@ -3,7 +3,7 @@ package org.example.service;
 import ADReNA_API.Data.DataSet;
 import ADReNA_API.Data.DataSetObject;
 import ADReNA_API.NeuralNetwork.Backpropagation;
-import org.example.config.RNAConfig;
+import org.example.dto.RNARecognizeResponse;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -20,10 +20,14 @@ public class RNAService {
 
     private DataSet dataSet;
 
-    private RNAConfig rnaConfig;
+    private Backpropagation backpropagation;
+
+    private int[] layers = new int[1];
 
     public RNAService() {
         dataSet = new DataSet(50, 5);
+        layers[0] = 50;
+        backpropagation = new Backpropagation(50,5, layers);
     }
 
     public void carregaDataSet() throws Exception {
@@ -62,10 +66,6 @@ public class RNAService {
     }
 
     public void learn() throws Exception {
-        int[] layers = new int[1];
-        layers[0] = 50;
-        Backpropagation backpropagation = new Backpropagation(50,5, layers);
-
         backpropagation.SetLearningRate(0.3);
         backpropagation.SetErrorRate(0.010);
         backpropagation.SetMaxIterationNumber(500000);
@@ -74,13 +74,17 @@ public class RNAService {
         System.out.println("inicio treino: " + new Date());
         backpropagation.Learn(dataSet);
         System.out.println("final do treino: " + new Date());
-        double[] request = new double[] {0,1,0,1,1,0,1,0,0,0,1,0,1,0,1,0,0,0,1,0,1,0,1,1,0,1,0,1,0,1,1,0,1,0,0,1,0,0,1,1,1,0,1,1,0,0,1,0,1,1};
-        System.out.println("inicio reconhecimento: " + new Date());
-        double[] response = backpropagation.Recognize(request);
-        System.out.println("reconheceu: " + new Date());
-        System.out.println("response: " + response[0]);
     }
 
+    public RNARecognizeResponse recognize(String requestValues) throws Exception {
+        double[] request = getDoubleArrayFromString(requestValues);
+        double[] recognizeResponse = backpropagation.Recognize(request);
+
+        String responseNums = Arrays.toString(recognizeResponse);
+        String grao = getGrao(recognizeResponse);
+
+        return new RNARecognizeResponse(grao, responseNums);
+    }
 
     private static double[] getDoubleArrayFromString(String value) {
         Pattern pattern = Pattern.compile("");
@@ -89,5 +93,61 @@ public class RNAService {
                 .toArray();
     }
 
+    private String getGrao(double[] values) {
+        String responseStr = "";
+        for(double val : values) {
+            responseStr += Math.round(val);
+        }
 
+        switch (responseStr) {
+            case "00001":
+                return "Arroz";
+            case "00010":
+                return "Milho";
+            case "00011":
+                return "Grão de bico";
+            case "00100":
+                return "Feijão";
+            case "00101":
+                return "Feijão guandu";
+            case "00110":
+                return "Feijão-mariposa";
+            case "00111":
+                return "Feijão moyashi";
+            case "01000":
+                return "Feijão preto";
+            case "01001":
+                return "Lentilha";
+            case "01010":
+                return "Romã";
+            case "01011":
+                return "Banana";
+            case "01100":
+                return "Manga";
+            case "01101":
+                return "Uva";
+            case "01110":
+                return "Melancia";
+            case "01111":
+                return "Melão";
+            case "10000":
+                return "Maçã";
+            case "10001":
+                return "Laranja";
+            case "10010":
+                return "Mamão";
+            case "10011":
+                return "Coco";
+            case "10100":
+                return "Algodão";
+            case "10101":
+                return "Juta";
+            case "10110":
+                return "Café";
+
+            default:
+                return "Não encontrei grão compatível.";
+
+        }
+    }
 }

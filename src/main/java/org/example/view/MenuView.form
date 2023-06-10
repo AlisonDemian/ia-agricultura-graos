@@ -27,14 +27,6 @@
               <text value="Pesquisar"/>
             </properties>
           </component>
-          <component id="d579e" class="javax.swing.JButton" binding="treinarButton">
-            <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Treinar"/>
-            </properties>
-          </component>
           <component id="34d29" class="javax.swing.JLabel" binding="tituloLabel">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -54,6 +46,14 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
+          <component id="df665" class="javax.swing.JButton" binding="sobreButton">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Sobre"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

@@ -8,6 +8,7 @@ public class MenuView extends JFrame{
     private JButton pesquisarButton;
     private JButton treinarButton;
     private JLabel tituloLabel;
+    private JButton sobreButton;
 
     public MenuView() {
 
@@ -15,8 +16,8 @@ public class MenuView extends JFrame{
             new PesquisarView();
         });
 
-        treinarButton.addActionListener(a -> {
-
+        sobreButton.addActionListener(a -> {
+            new SobreView();
         });
 
         setContentPane(menuPanel);

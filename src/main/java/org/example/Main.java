@@ -9,6 +9,6 @@ public class Main {
         RNAService rnaService = new RNAService();
         rnaService.carregaDataSet();
         rnaService.learn();
-//        MenuView menuView = new MenuView();
+        MenuView menuView = new MenuView();
     }
 }
