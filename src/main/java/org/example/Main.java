@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.service.RNAService;
-import org.example.view.MenuView;
+import org.example.view.PesquisarView;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -9,6 +9,6 @@ public class Main {
         RNAService rnaService = new RNAService();
         rnaService.carregaDataSet();
         rnaService.learn();
-        MenuView menuView = new MenuView();
+        PesquisarView pesquisarView = new PesquisarView(rnaService);
     }
 }

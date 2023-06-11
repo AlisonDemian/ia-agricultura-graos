@@ -20,12 +20,11 @@ public class RNAService {
 
     private DataSet dataSet;
 
-    private Backpropagation backpropagation;
-
-    private int[] layers = new int[1];
+    private static Backpropagation backpropagation;
 
     public RNAService() {
         dataSet = new DataSet(50, 5);
+        int[] layers = new int[1];
         layers[0] = 50;
         backpropagation = new Backpropagation(50,5, layers);
     }
@@ -146,7 +145,7 @@ public class RNAService {
                 return "Café";
 
             default:
-                return "Não encontrei grão compatível.";
+                return "Não há grão compatível.";
 
         }
     }

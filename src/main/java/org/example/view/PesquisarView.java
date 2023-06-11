@@ -31,14 +31,16 @@ public class PesquisarView extends JFrame {
     private JLabel humidLabel;
     private JLabel phLabel;
     private JLabel chuvaLabel;
+    private JPanel recomendacaoPanel;
+    private JPanel respostaAdrenaPanel;
+    private JTextArea respostaAdrenaTxtArea;
     private JLabel resultadoNumLabel;
 
     private RNAService service;
     private RNARecognizeResponse rnaRecognizeResponse = new RNARecognizeResponse();
 
-    public PesquisarView() {
-
-        service = new RNAService();
+    public PesquisarView(RNAService rnaService) {
+        service = rnaService;
         rnaRecognizeResponse = new RNARecognizeResponse();
 
         nSlider.addChangeListener(event -> {
@@ -72,6 +74,8 @@ public class PesquisarView extends JFrame {
                     + convertIntToBinary(Integer.toBinaryString(phSlider.getValue()), "%4s")
                     + convertIntToBinary(Integer.toBinaryString(chuvaSlider.getValue()), "%9s");
 
+            System.out.println("Entradas: " + requestStr);
+
             try {
                 rnaRecognizeResponse = service.recognize(requestStr);
             } catch (Exception e) {
@@ -79,11 +83,12 @@ public class PesquisarView extends JFrame {
             }
 
             resultadoField.setText(rnaRecognizeResponse.getGrao());
-            resultadoNumLabel.setText(rnaRecognizeResponse.getValor());
+            respostaAdrenaTxtArea.setText(rnaRecognizeResponse.getValor());
         });
 
+        setTitle("Pesquisa de grãos");
         setContentPane(pesquisarPanel);
-        setSize(500, 700);
+        setSize(600, 700);
         setLocationRelativeTo(null);
         setResizable(true);
         setVisible(true);
