@@ -34,6 +34,7 @@ public class PesquisarView extends JFrame {
     private JPanel recomendacaoPanel;
     private JPanel respostaAdrenaPanel;
     private JTextArea respostaAdrenaTxtArea;
+    private JButton sobreButton;
     private JLabel resultadoNumLabel;
 
     private RNAService service;
@@ -64,6 +65,11 @@ public class PesquisarView extends JFrame {
         chuvaSlider.addChangeListener(event -> {
             chuvaLabel.setText(String.valueOf(chuvaSlider.getValue()));
         });
+
+        sobreButton.addActionListener(a -> {
+            new SobreView();
+        });
+
 
         buscarButton.addActionListener(a -> {
             String requestStr = convertIntToBinary(Integer.toBinaryString(nSlider.getValue()), "%8s")

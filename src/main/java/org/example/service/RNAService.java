@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 public class RNAService {
 
-    public static final String CSV_PATH = "D:\\DataSet_All_Bin.xlsx.csv";
+    public static final String CSV_PATH = "C:\\DataSet_All_Bin.xlsx.csv";
 
     private DataSet dataSet;
 
