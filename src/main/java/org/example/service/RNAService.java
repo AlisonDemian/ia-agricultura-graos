@@ -22,6 +22,12 @@ public class RNAService {
 
     private static Backpropagation backpropagation;
 
+    private int iteracoes;
+
+    private double errorRate;
+
+    private double learningRate;
+
     public RNAService() {
         dataSet = new DataSet(50, 5);
         int[] layers = new int[1];
@@ -65,14 +71,17 @@ public class RNAService {
     }
 
     public void learn() throws Exception {
-        backpropagation.SetLearningRate(0.3);
-        backpropagation.SetErrorRate(0.010);
+        backpropagation.SetLearningRate(0.1);
+        backpropagation.SetErrorRate(0.005);
         backpropagation.SetMaxIterationNumber(500000);
 
         System.out.println(dataSet.GetList());
         System.out.println("inicio treino: " + new Date());
         backpropagation.Learn(dataSet);
         System.out.println("final do treino: " + new Date());
+        iteracoes = backpropagation.GetIterationNumber();
+        errorRate = backpropagation.GetErrorRate();
+        learningRate = backpropagation.GetLearningRate();
     }
 
     public RNARecognizeResponse recognize(String requestValues) throws Exception {
@@ -149,4 +158,17 @@ public class RNAService {
 
         }
     }
+
+    public int getIteracoes() {
+        return iteracoes;
+    }
+
+    public double getErrorRate() {
+        return errorRate;
+    }
+
+    public double getLearningRate() {
+        return learningRate;
+    }
+
 }

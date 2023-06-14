@@ -35,14 +35,35 @@ public class PesquisarView extends JFrame {
     private JPanel respostaAdrenaPanel;
     private JTextArea respostaAdrenaTxtArea;
     private JButton sobreButton;
+    private JTextField iteracaoTxtField;
+    private JTextField taxaErroTxtField;
+    private JTextField taxaAprendizadoTxtField;
+    private JLabel iteracaoLabel;
+    private JLabel taxaErroLabel;
+    private JLabel taxaAprendizadoLabel;
+    private JPanel configsAprendizadoPanel;
+    private JTextArea entradaUsuarioTxtArea;
     private JLabel resultadoNumLabel;
 
+    private String nEntradaBinaria;
+    private String pEntradaBinaria;
+    private String kEntradaBinaria;
+    private String tempEntradaBinaria;
+    private String humEntradaBinaria;
+    private String phEntradaBinaria;
+    private String chuvaEntradaBinaria;
     private RNAService service;
     private RNARecognizeResponse rnaRecognizeResponse = new RNARecognizeResponse();
 
     public PesquisarView(RNAService rnaService) {
         service = rnaService;
         rnaRecognizeResponse = new RNARecognizeResponse();
+
+
+        //configs de aprendizado
+        iteracaoTxtField.setText(String.valueOf(rnaService.getIteracoes()));
+        taxaErroTxtField.setText(String.valueOf(rnaService.getErrorRate()));
+        taxaAprendizadoTxtField.setText(String.valueOf(rnaService.getLearningRate()));
 
         nSlider.addChangeListener(event -> {
             nLabel.setText(String.valueOf(nSlider.getValue()));
@@ -72,13 +93,21 @@ public class PesquisarView extends JFrame {
 
 
         buscarButton.addActionListener(a -> {
-            String requestStr = convertIntToBinary(Integer.toBinaryString(nSlider.getValue()), "%8s")
-                    + convertIntToBinary(Integer.toBinaryString(pSlider.getValue()), "%8s")
-                    + convertIntToBinary(Integer.toBinaryString(kSlider.getValue()), "%8s")
-                    + convertIntToBinary(Integer.toBinaryString(temperaturaSlider.getValue()), "%6s")
-                    + convertIntToBinary(Integer.toBinaryString(humidadeSlider.getValue()), "%7s")
-                    + convertIntToBinary(Integer.toBinaryString(phSlider.getValue()), "%4s")
-                    + convertIntToBinary(Integer.toBinaryString(chuvaSlider.getValue()), "%9s");
+
+            nEntradaBinaria = convertIntToBinary(Integer.toBinaryString(nSlider.getValue()), "%8s");
+            pEntradaBinaria = convertIntToBinary(Integer.toBinaryString(pSlider.getValue()), "%8s");
+            kEntradaBinaria = convertIntToBinary(Integer.toBinaryString(kSlider.getValue()), "%8s");
+            tempEntradaBinaria = convertIntToBinary(Integer.toBinaryString(temperaturaSlider.getValue()), "%6s");
+            humEntradaBinaria = convertIntToBinary(Integer.toBinaryString(humidadeSlider.getValue()), "%7s");
+            phEntradaBinaria = convertIntToBinary(Integer.toBinaryString(phSlider.getValue()), "%4s");
+            chuvaEntradaBinaria =  convertIntToBinary(Integer.toBinaryString(chuvaSlider.getValue()), "%9s");
+            String requestStr = nEntradaBinaria
+                    + pEntradaBinaria
+                    + kEntradaBinaria
+                    + tempEntradaBinaria
+                    + humEntradaBinaria
+                    + phEntradaBinaria
+                    + chuvaEntradaBinaria;
 
             System.out.println("Entradas: " + requestStr);
 
@@ -89,14 +118,16 @@ public class PesquisarView extends JFrame {
             }
 
             resultadoField.setText(rnaRecognizeResponse.getGrao());
+            entradaUsuarioTxtArea.setText(nEntradaBinaria + ", " + pEntradaBinaria + ", " + kEntradaBinaria + ", "
+                    + tempEntradaBinaria + ", " + humEntradaBinaria + ", " + phEntradaBinaria + ", " + chuvaEntradaBinaria);
             respostaAdrenaTxtArea.setText(rnaRecognizeResponse.getValor());
         });
 
         setTitle("Pesquisa de grãos");
         setContentPane(pesquisarPanel);
-        setSize(600, 700);
+        setSize(600, 900);
         setLocationRelativeTo(null);
-        setResizable(true);
+        setResizable(false);
         setVisible(true);
         setFocusable(true);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
