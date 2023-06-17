@@ -3,6 +3,7 @@ package org.example.service;
 import ADReNA_API.Data.DataSet;
 import ADReNA_API.Data.DataSetObject;
 import ADReNA_API.NeuralNetwork.Backpropagation;
+import org.example.dto.RNALearnRequest;
 import org.example.dto.RNARecognizeResponse;
 
 import java.io.BufferedReader;
@@ -24,15 +25,19 @@ public class RNAService {
 
     private int iteracoes;
 
-    private double errorRate;
+    private double errorRate = 0.005;
 
-    private double learningRate;
+    private double learningRate = 0.1;
+
+    private int maxIterationNum = 500000;
+
+    private int numLayers = 1;
+
+    private int numNeuronios = 50;
 
     public RNAService() {
         dataSet = new DataSet(50, 5);
-        int[] layers = new int[1];
-        layers[0] = 50;
-        backpropagation = new Backpropagation(50,5, layers);
+
     }
 
     public void carregaDataSet() throws Exception {
@@ -70,10 +75,17 @@ public class RNAService {
 
     }
 
-    public void learn() throws Exception {
-        backpropagation.SetLearningRate(0.1);
-        backpropagation.SetErrorRate(0.005);
-        backpropagation.SetMaxIterationNumber(500000);
+    public String learn(RNALearnRequest request) throws Exception {
+        int[] layers = new int[request.getNumLayers()];
+        for(int i = 0; i < layers.length; i++) {
+            layers[i] = request.getNumNeuronios();
+        }
+
+        backpropagation = new Backpropagation(50,5, layers);
+
+        backpropagation.SetLearningRate(request.getLearningRate());
+        backpropagation.SetErrorRate(request.getErrorRate());
+        backpropagation.SetMaxIterationNumber(request.getMaxIterationNum());
 
         System.out.println(dataSet.GetList());
         System.out.println("inicio treino: " + new Date());
@@ -82,6 +94,8 @@ public class RNAService {
         iteracoes = backpropagation.GetIterationNumber();
         errorRate = backpropagation.GetErrorRate();
         learningRate = backpropagation.GetLearningRate();
+
+        return "Aprendizado finalizado com sucesso!\n "+ iteracoes +" iterações realizadas";
     }
 
     public RNARecognizeResponse recognize(String requestValues) throws Exception {
@@ -163,12 +177,39 @@ public class RNAService {
         return iteracoes;
     }
 
+    public void setIteracoes(int iteracoes) {
+        this.iteracoes = iteracoes;
+    }
+
     public double getErrorRate() {
         return errorRate;
+    }
+
+    public void setErrorRate(double errorRate) {
+        this.errorRate = errorRate;
     }
 
     public double getLearningRate() {
         return learningRate;
     }
 
+    public void setLearningRate(double learningRate) {
+        this.learningRate = learningRate;
+    }
+
+    public int getNumLayers() {
+        return numLayers;
+    }
+
+    public void setNumLayers(int numLayers) {
+        this.numLayers = numLayers;
+    }
+
+    public int getNumNeuronios() {
+        return numNeuronios;
+    }
+
+    public void setNumNeuronios(int numNeuronios) {
+        this.numNeuronios = numNeuronios;
+    }
 }

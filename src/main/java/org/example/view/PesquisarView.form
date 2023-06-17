@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.example.view.PesquisarView">
-  <grid id="27dc6" binding="pesquisarPanel" layout-manager="GridLayoutManager" row-count="13" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="pesquisarPanel" layout-manager="GridLayoutManager" row-count="12" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="20" left="10" bottom="20" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="620" height="990"/>
+      <xy x="20" y="20" width="707" height="990"/>
     </constraints>
     <properties>
       <autoscrolls value="true"/>
@@ -24,7 +24,7 @@
       <grid id="b5bd3" binding="nPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
@@ -71,7 +71,7 @@
       <grid id="bc7e3" binding="pPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
@@ -116,7 +116,7 @@
       <grid id="1d851" binding="kPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
@@ -161,7 +161,7 @@
       <grid id="6c2a1" binding="temperaturaPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
@@ -207,7 +207,7 @@
       <grid id="9913f" binding="humidadePanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
@@ -250,7 +250,7 @@
       <grid id="66a19" binding="phPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
@@ -295,7 +295,7 @@
       <grid id="6ac9a" binding="pluviosidadePanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="8" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
@@ -339,19 +339,19 @@
       </grid>
       <component id="14e7b" class="javax.swing.JButton" binding="buscarButton">
         <constraints>
-          <grid row="9" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <background color="-12828863"/>
+          <background color="-14407895"/>
           <borderPainted value="true"/>
           <foreground color="-720909"/>
           <text value="Buscar"/>
         </properties>
       </component>
-      <grid id="1d8a" binding="recomendacaoPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="1d8a" binding="recomendacaoPanel" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="10" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
@@ -368,23 +368,15 @@
               <text value="Grão Recomendado"/>
             </properties>
           </component>
-          <vspacer id="837e4">
+          <component id="29bd6" class="javax.swing.JTextField" binding="resultadoTxtField">
             <constraints>
-              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-            </constraints>
-          </vspacer>
-          <component id="d84ce" class="javax.swing.JTextField" binding="resultadoField">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="8" fill="2" indent="0" use-parent-layout="false">
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
             <properties>
-              <background color="-12828863"/>
-              <disabledTextColor color="-720909"/>
-              <editable value="true"/>
-              <enabled value="false"/>
-              <focusTraversalPolicyProvider value="true"/>
+              <background color="-12236470"/>
+              <font size="14"/>
               <foreground color="-720909"/>
             </properties>
           </component>
@@ -393,7 +385,7 @@
       <grid id="d666d" binding="respostaAdrenaPanel" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="12" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="11" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
@@ -409,14 +401,14 @@
               <text value="Resposta ADReNA"/>
             </properties>
           </component>
-          <component id="279c4" class="javax.swing.JTextArea" binding="respostaAdrenaTxtArea">
+          <component id="ef45e" class="javax.swing.JTextArea" binding="respostaAdrenaTxtArea">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
             <properties>
-              <background color="-12828863"/>
+              <background color="-12236470"/>
               <foreground color="-720909"/>
               <lineWrap value="true"/>
             </properties>
@@ -429,97 +421,21 @@
         </constraints>
         <properties>
           <autoscrolls value="true"/>
-          <background color="-12828863"/>
+          <background color="-14407895"/>
+          <borderPainted value="true"/>
           <foreground color="-720909"/>
+          <selected value="false"/>
           <text value="Sobre"/>
         </properties>
       </component>
-      <grid id="64b18" binding="configsAprendizadoPanel" layout-manager="GridLayoutManager" row-count="3" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="81bb0" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="10" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-12828863"/>
         </properties>
-        <border type="none"/>
-        <children>
-          <component id="31624" class="javax.swing.JLabel" binding="iteracaoLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <foreground color="-720909"/>
-              <text value="Iterações"/>
-            </properties>
-          </component>
-          <component id="87ef0" class="javax.swing.JLabel" binding="taxaErroLabel">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-12828863"/>
-              <foreground color="-720909"/>
-              <text value="Taxa de erro"/>
-            </properties>
-          </component>
-          <component id="335" class="javax.swing.JLabel" binding="taxaAprendizadoLabel">
-            <constraints>
-              <grid row="2" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <foreground color="-720909"/>
-              <text value="Taxa de aprendizado"/>
-            </properties>
-          </component>
-          <component id="9ea0d" class="javax.swing.JTextField" binding="taxaErroTxtField">
-            <constraints>
-              <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-12828863"/>
-              <disabledTextColor color="-720909"/>
-              <enabled value="false"/>
-              <foreground color="-720909"/>
-            </properties>
-          </component>
-          <component id="a25db" class="javax.swing.JTextField" binding="taxaAprendizadoTxtField">
-            <constraints>
-              <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-12828863"/>
-              <disabledTextColor color="-720909"/>
-              <enabled value="false"/>
-              <foreground color="-720909"/>
-            </properties>
-          </component>
-          <component id="b9eb2" class="javax.swing.JTextField" binding="iteracaoTxtField">
-            <constraints>
-              <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-            </constraints>
-            <properties>
-              <background color="-12828863"/>
-              <disabledTextColor color="-720909"/>
-              <editable value="true"/>
-              <enabled value="false"/>
-              <foreground color="-720909"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="81bb0" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="11" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
         <border type="none"/>
         <children>
           <component id="35e50" class="javax.swing.JLabel">
@@ -533,21 +449,30 @@
               <text value="Entradas Usuário"/>
             </properties>
           </component>
-          <component id="3971d" class="javax.swing.JTextArea" binding="entradaUsuarioTxtArea">
+          <component id="11c41" class="javax.swing.JTextField" binding="entradasTxtField">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
             <properties>
-              <background color="-12828863"/>
-              <disabledTextColor color="-720909"/>
-              <editable value="true"/>
-              <enabled value="false"/>
+              <background color="-12236470"/>
+              <foreground color="-720909"/>
             </properties>
           </component>
         </children>
       </grid>
+      <component id="82dae" class="javax.swing.JButton" binding="treinarButton" default-binding="true">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-14407895"/>
+          <borderPainted value="true"/>
+          <foreground color="-720909"/>
+          <text value="Aprender"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>

@@ -38,11 +38,12 @@ public class PesquisarView extends JFrame {
     private JTextField iteracaoTxtField;
     private JTextField taxaErroTxtField;
     private JTextField taxaAprendizadoTxtField;
-    private JLabel iteracaoLabel;
-    private JLabel taxaErroLabel;
-    private JLabel taxaAprendizadoLabel;
-    private JPanel configsAprendizadoPanel;
     private JTextArea entradaUsuarioTxtArea;
+    private JButton treinarButton;
+    private JTextField resultadoTxtField;
+    private JTextField entradasTxtField;
+    private JLabel resultadoLabel;
+    private JLabel entradasLabel;
     private JLabel resultadoNumLabel;
 
     private String nEntradaBinaria;
@@ -58,12 +59,6 @@ public class PesquisarView extends JFrame {
     public PesquisarView(RNAService rnaService) {
         service = rnaService;
         rnaRecognizeResponse = new RNARecognizeResponse();
-
-
-        //configs de aprendizado
-        iteracaoTxtField.setText(String.valueOf(rnaService.getIteracoes()));
-        taxaErroTxtField.setText(String.valueOf(rnaService.getErrorRate()));
-        taxaAprendizadoTxtField.setText(String.valueOf(rnaService.getLearningRate()));
 
         nSlider.addChangeListener(event -> {
             nLabel.setText(String.valueOf(nSlider.getValue()));
@@ -89,6 +84,10 @@ public class PesquisarView extends JFrame {
 
         sobreButton.addActionListener(a -> {
             new SobreView();
+        });
+
+        treinarButton.addActionListener(a -> {
+            new TreinarView(service);
         });
 
 
@@ -117,20 +116,20 @@ public class PesquisarView extends JFrame {
                 throw new RuntimeException(e);
             }
 
-            resultadoField.setText(rnaRecognizeResponse.getGrao());
-            entradaUsuarioTxtArea.setText(nEntradaBinaria + ", " + pEntradaBinaria + ", " + kEntradaBinaria + ", "
+            resultadoTxtField.setText(rnaRecognizeResponse.getGrao());
+            entradasTxtField.setText(nEntradaBinaria + ", " + pEntradaBinaria + ", " + kEntradaBinaria + ", "
                     + tempEntradaBinaria + ", " + humEntradaBinaria + ", " + phEntradaBinaria + ", " + chuvaEntradaBinaria);
             respostaAdrenaTxtArea.setText(rnaRecognizeResponse.getValor());
         });
 
         setTitle("Pesquisa de grãos");
         setContentPane(pesquisarPanel);
-        setSize(600, 900);
+        setSize(650, 900);
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
         setFocusable(true);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     private String convertIntToBinary(String num, String numBits) {
