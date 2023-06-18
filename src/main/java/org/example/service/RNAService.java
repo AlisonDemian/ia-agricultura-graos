@@ -76,12 +76,17 @@ public class RNAService {
     }
 
     public String learn(RNALearnRequest request) throws Exception {
-        int[] layers = new int[request.getNumLayers()];
-        for(int i = 0; i < layers.length; i++) {
-            layers[i] = request.getNumNeuronios();
+        if(request.getNumLayers() <= 0) {
+            backpropagation = new Backpropagation(50, 5);
         }
+        else {
+            int[] layers = new int[request.getNumLayers()];
+            for(int i = 0; i < layers.length; i++) {
+                layers[i] = request.getNumNeuronios();
+            }
 
-        backpropagation = new Backpropagation(50,5, layers);
+            backpropagation = new Backpropagation(50,5, layers);
+        }
 
         backpropagation.SetLearningRate(request.getLearningRate());
         backpropagation.SetErrorRate(request.getErrorRate());
